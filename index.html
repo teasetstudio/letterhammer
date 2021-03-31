@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Letter Hammer</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="icon" href="./img/hammer.png">
+        <meta name="description" content="Компьютерные игры">
+        <meta property="og:title" content="Letter Hammer | Игры для детей">
+        <meta property="og:description" content="letter Hammer, висельница, игры для детей, маленьких">
+        <meta property="og:image" content="img/hammer.png">
+    </head>
+    <body>
+        <header class="container">
+            <button id="menu-btn">Mеню</button>
+            <div id="records">
+                <p>Рекорды:</p>
+                <ol id="level-1">
+                    <li>Иван: 92 очков</li>
+                    <li>Иван: 86 очков</li>
+                    <li>Иван: 65 очков</li>
+                    <li>Иван: 60 очков</li>
+                    <li>Иван: 49 очков</li>
+                    <li>Иван: 45 очков</li>
+                    <li>Иван: 36 очков</li>
+                    <li>Иван: 34 очков</li>
+                    <li>Иван: 30 очков</li>
+                    <li>Иван: 23 очков</li>
+                </ol>
+                <ol id="level-2">
+                    <li>Иван: 25 очков</li>
+                    <li>Иван: 20 очков</li>
+                    <li>Иван: 16 очков</li>
+                    <li>Иван: 13 очков</li>
+                    <li>Егор: 12 очков</li>
+                    <li>Иван: 11 очков</li>
+                    <li>Иван: 10 очков</li>
+                    <li>Иван: 9 очков</li>
+                    <li>Иван: 6 очков</li>
+                    <li>Иван: 2 очков</li>
+                </ol>
+            </div>
+
+            <div id="menu" class="container">
+                <div class="menu-block">
+                    <h3>Сложность:</h3>
+                    <div class="level">
+                        <button class="level-item" onclick="normLevel()">Норма</button>
+                        <button class="level-item" onclick="hardLevel()">Сложно</button>
+                    </div>
+                </div>
+
+                <div class="menu-block">
+                    <h3>Режимы:</h3>
+                    <div class="level">
+                        <button class="level-item" onclick="onePlayer()">1 Игрок</button>
+                        <button class="level-item" onclick="twoPlayers()">2 Игрока</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="animation">
+            <div class="container">
+                <div class="header-anim">
+                    <p class="hammer">Letter</p>
+                    <div id="score-div" class="right-item">
+                        <p>Очки</p>
+                        <div id="score" class="number-item">0</div>
+                    </div>
+                    <div id="score-div2" class="right-item">
+                        <p>Очки</p>
+                        <div id="score2" class="number-item">0</div>
+                    </div>
+
+                    <p class="hammer">Hammer</p>
+                </div>
+                <div class="attempt-ham">
+                    <div class="posRel">
+                        <div id="pic-hammer">
+                            <img src="./img/hammer.png" height="90" alt="">
+                        </div>
+                    </div>
+                    <div id="attempts"></div>
+                </div>
+            </div>
+        </section>
+        <main>
+            <div class="container">
+                <div id="hided-word"></div>
+                <div class="letter-organizator">
+                    <div class="side-block widpos">
+                        <div id="usedLetters"></div>
+                    </div>
+                    <div id="letter-box">
+                        <label class="input" for="fname">Введите букву:</label>
+                        <div class="input-shadow">
+                            <input id="letter-input" class="input" type="text" value=""
+                                   autocomplete="off" maxlength="1">
+                        </div>
+                        <button id="letter-btn" type='button' class="input">Ввод</button>
+                    </div>
+                    <div class="right-organizator side-block">
+                        <div class="clock right-item">
+                            <p>Время</p>
+                            <div id="timer" class="number-item">0</div>
+                        </div>
+                        <div class="words  right-item">
+                            <p>Слова
+
+                            </p>
+                            <div id="words-guessed" class="number-item">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- for two players -->
+        <div id="word-window">
+            <p>Введите русское слово от 4 до 10 букв:</p>
+            <input id="input-word" type="password" maxlength="10" autocomplete="off" autofocus>
+            <div class="btns">
+                <button id="word-btn" type='button' onclick="gameActions.getWord(this)">Ввод</button>
+                <button id="show-btn" type='button' onclick="hideText(this)" onfocus="showText()"><img src="./img/show.png" height="30" alt=""></button>
+            </div>
+            
+        </div>
+
+        <script src="./js/index.js"></script>
+    </body>
+</html>
